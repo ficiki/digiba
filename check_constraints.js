@@ -4,10 +4,10 @@ require('dotenv').config();
 async function checkConstraints() {
   try {
     const connection = await mysql.createConnection({
-      host: process.env.DB_HOST || 'localhost',
+      host: process.env.DB_HOST || 'mysql.railway.internal',
       user: process.env.DB_USER || 'root',
-      password: process.env.DB_PASSWORD || '',
-      database: process.env.DB_NAME || 'digitalisasi_bapb'
+      password: process.env.DB_PASSWORD || 'uZAbkXAAVpIrBQWXVRsJdbfrQceTxnhk',
+      database: process.env.DB_NAME || 'railway'
     });
 
     console.log('Checking foreign key constraints...');
@@ -22,7 +22,7 @@ async function checkConstraints() {
       FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
       WHERE REFERENCED_TABLE_SCHEMA = ?
       AND (REFERENCED_TABLE_NAME = 'bapb' OR TABLE_NAME = 'bapb')
-    `, [process.env.DB_NAME || 'digitalisasi_bapb']);
+    `, [process.env.DB_NAME || 'railway']);
 
     console.log('Foreign key constraints:');
     console.log(JSON.stringify(constraints, null, 2));
