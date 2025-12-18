@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Konfigurasi base URL
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://digiba-backend-production.up.railway.app:8080/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://digiba-backend-production.up.railway.app:4000/api';
 
 // Buat instance axios dengan konfigurasi default
 const api = axios.create({
