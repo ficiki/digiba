@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://digiba-backend-production.up.railway.app:8080',
+        target: 'https://digiba-backend-production.up.railway.app:4000',
         changeOrigin: true,
         secure: false
       }
