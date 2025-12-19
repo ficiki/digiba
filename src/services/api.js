@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 // Konfigurasi base URL
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://digiba-backend-production.up.railway.app/:8080/api';
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD
+    ? 'https://digiba-backend-production.up.railway.app/api'
+    : 'http://localhost:4000/api');
 
 // Buat instance axios dengan konfigurasi default
 const api = axios.create({
@@ -328,4 +332,3 @@ export const formatDateTime = (dateString) => {
 
 // Export default instance untuk custom calls
 export default api;
-
