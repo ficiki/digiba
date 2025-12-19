@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node ./node_modules/vite/bin/vite.js build",
-    "start": "server node.js",
+    "build": "npx vite build",
+    "start": "npx server node.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
